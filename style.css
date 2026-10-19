@@ -1,0 +1,83 @@
+/* style.css — styles for the beginner-friendly Pythagoras site */
+
+/* Colour variables and basic font */
+:root{
+  --bg-0: #0b1220;
+  --bg-1: linear-gradient(180deg,#072032 0%, #061428 100%);
+  --card: rgba(255,255,255,0.03);
+  --accent: #7c5cff;
+  --accent-2: #00d4ff;
+  --good: #22c55e;
+  --bad: #ef4444;
+  --muted: #9fb0c8;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 14px;
+  --maxw: 1080px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* Page background and layout */
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; background: var(--bg-1); color:#e7f2ff; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+.app { max-width: var(--maxw); margin:28px auto; padding:18px; }
+
+/* Header */
+.top { display:flex; align-items:center; gap:12px; justify-content:space-between; flex-wrap:wrap; }
+.top h1 { margin:0; color:var(--accent); font-size:1.4rem; letter-spacing:0.3px; }
+.tag { margin:0; color:var(--muted); font-size:0.95rem; }
+
+/* Score badge */
+.score { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:#021024; padding:8px 12px; border-radius:999px; font-weight:700; }
+
+/* Main grid: stack on mobile, two columns on larger screens */
+.main { display:grid; gap:16px; margin-top:18px; grid-template-columns: 1fr; }
+
+/* Card style */
+.card { background: var(--card); border-radius: var(--radius); padding:14px; box-shadow: 0 8px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03); }
+
+/* Intro section */
+.formula { margin:10px 0; padding:12px; border-radius:10px; background: linear-gradient(90deg, rgba(124,92,255,0.12), rgba(0,212,255,0.06)); color:#eaf6ff; font-weight:800; font-size:1.1rem; text-align:center; }
+.steps { padding-left:18px; color:var(--muted); }
+.mistakes { padding-left:18px; color:var(--muted); }
+
+/* Practice column */
+.practice h2 { margin-top:0; }
+.practice-list { color:var(--muted); padding-left:18px; }
+.small-btn { margin-top:10px; padding:8px 10px; background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted); border-radius:8px; cursor:pointer; }
+
+/* Answers (hidden by default) */
+.answers { margin-top:10px; display:none; color: #dbeeff; background: rgba(255,255,255,0.02); padding:10px; border-radius:8px; }
+
+/* Quiz styling */
+.quiz { margin-top:12px; }
+.question { border-radius:12px; margin-bottom:10px; padding:10px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.02); }
+.question legend { font-weight:700; color:#eaf6ff; margin-bottom:8px; }
+.question label { display:flex; gap:10px; align-items:center; padding:8px; border-radius:8px; cursor:pointer; color:var(--muted); transition: background .12s ease, color .12s ease; }
+.question label input { width:18px; height:18px; accent-color:var(--accent); }
+
+/* Hover state to make it feel tappable */
+.question label:hover { background: var(--glass); color:#e7f8ff; }
+
+/* Feedback text below each question */
+.feedback { margin-top:8px; min-height:1.2em; font-weight:700; color:var(--muted); }
+
+/* Buttons */
+.quiz-controls { display:flex; gap:10px; margin-top:8px; flex-wrap:wrap; }
+.btn { background: linear-gradient(90deg,var(--accent),var(--accent-2)); border: none; padding:10px 14px; border-radius:10px; color:#021024; font-weight:700; cursor:pointer; box-shadow: 0 10px 24px rgba(2,6,23,0.45); }
+.btn.ghost { background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted); }
+
+/* Final summary area */
+.final { margin-top:10px; color:var(--muted); padding:8px; border-radius:8px; }
+
+/* Correct / incorrect visual states for a question */
+.question.correct { outline: 2px solid rgba(34,197,94,0.12); box-shadow: 0 8px 22px rgba(34,197,94,0.04); }
+.question.incorrect { outline: 2px solid rgba(239,68,68,0.12); box-shadow: 0 8px 22px rgba(239,68,68,0.03); }
+
+/* Footer */
+.foot { margin-top:18px; text-align:center; color:var(--muted); }
+
+/* Desktop layout: two columns */
+@media (min-width:860px) {
+  .main { grid-template-columns: 1fr 380px; align-items:start; }
+  .practice { position:sticky; top:20px; }
+}
