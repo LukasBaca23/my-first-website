@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pythagoras — Quick Quiz & Practice</title>
+  <!-- Link to stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- App wrapper -->
+  <div class="app">
+    <!-- Header -->
+    <header class="top">
+      <h1>Pythagoras — Quick Quiz & Practice</h1>
+      <p class="tag">Simple, colourful and beginner-friendly for 13–15 year olds</p>
+      <!-- Live score badge -->
+      <div id="score" class="score" aria-live="polite">Score: 0 / 0</div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+      <!-- Left column: explanation + practice -->
+      <section class="card intro">
+        <!-- Short comment: quick reminder for students -->
+        <h2>Simple explanation</h2>
+        <p>
+          Pythagoras is for right-angled triangles only. If the sides are a, b and c (where c is the longest side),
+          then:
+        </p>
+
+        <!-- Formula box -->
+        <div class="formula">a² + b² = c²</div>
+
+        <!-- Worked example -->
+        <h3>Worked example (step-by-step)</h3>
+        <p><strong>Find c</strong> when a = 3 and b = 4</p>
+        <ol class="steps">
+          <li>Write the rule: a² + b² = c²</li>
+          <li>Substitute: 3² + 4² = c²</li>
+          <li>Calculate: 9 + 16 = c² → 25 = c²</li>
+          <li>Square root: c = √25 = 5</li>
+        </ol>
+
+        <!-- Common mistakes -->
+        <h3>Common mistakes</h3>
+        <ul class="mistakes">
+          <li>Using Pythagoras on a triangle that isn't right-angled</li>
+          <li>Mixing up which side is c (c must be the longest)</li>
+          <li>Forgetting to take the square root at the end</li>
+          <li>Rounding too early — do the square root last</li>
+        </ul>
+      </section>
+
+      <!-- Right column: practice + quiz -->
+      <aside class="card practice">
+        <h2>Practice problems</h2>
+
+        <!-- Practice list with reveal answers button -->
+        <ol class="practice-list">
+          <li>a = 6, b = 8 → c = ?</li>
+          <li>a = 5, b = 12 → c = ?</li>
+          <li>c = 13, a = 5 → b = ?</li>
+          <li>a = 7, b = 24 → c = ?</li>
+          <li>A ladder is 2.5 m from a wall and reaches 6 m up. How long is the ladder?</li>
+        </ol>
+
+        <button id="toggleAnswers" class="small-btn">Show answers</button>
+        <div id="answers" class="answers" aria-hidden="true">
+          <ol>
+            <li>10</li>
+            <li>13</li>
+            <li>12</li>
+            <li>25</li>
+            <li>≈ 6.50 m</li>
+          </ol>
+        </div>
+
+        <hr />
+
+        <!-- Quiz header -->
+        <h2>5-question quiz — tap an answer for instant feedback</h2>
+
+        <!-- Quiz form -->
+        <form id="quiz" autocomplete="off" class="quiz" aria-label="Pythagoras quiz">
+          <!-- Question 1 -->
+          <fieldset class="question" data-correct="B">
+            <legend>1) What is the formula for Pythagoras?</legend>
+            <label><input type="radio" name="q1" value="A"> A) a + b = c</label>
+            <label><input type="radio" name="q1" value="B"> B) a² + b² = c²</label>
+            <label><input type="radio" name="q1" value="C"> C) a² - b² = c²</label>
+            <label><input type="radio" name="q1" value="D"> D) a + b² = c</label>
+            <div class="feedback" aria-live="polite"></div>
+          </fieldset>
+
+          <!-- Question 2 -->
+          <fieldset class="question" data-correct="B">
+            <legend>2) Which side is the hypotenuse?</legend>
+            <label><input type="radio" name="q2" value="A"> A) The shortest side</label>
+            <label><input type="radio" name="q2" value="B"> B) The side opposite the right angle</label>
+            <label><input type="radio" name="q2" value="C"> C) Any side</label>
+            <label><input type="radio" name="q2" value="D"> D) The side next to the right angle</label>
+            <div class="feedback" aria-live="polite"></div>
+          </fieldset>
+
+          <!-- Question 3 -->
+          <fieldset class="question" data-correct="5">
+            <legend>3) Find c: a = 3, b = 4</legend>
+            <label><input type="radio" name="q3" value="4"> A) 4</label>
+            <label><input type="radio" name="q3" value="5"> B) 5</label>
+            <label><input type="radio" name="q3" value="6"> C) 6</label>
+            <label><input type="radio" name="q3" value="7"> D) 7</label>
+            <div class="feedback" aria-live="polite"></div>
+          </fieldset>
+
+          <!-- Question 4 -->
+          <fieldset class="question" data-correct="12">
+            <legend>4) Find b: a = 5, c = 13</legend>
+            <label><input type="radio" name="q4" value="10"> A) 10</label>
+            <label><input type="radio" name="q4" value="11"> B) 11</label>
+            <label><input type="radio" name="q4" value="12"> C) 12</label>
+            <label><input type="radio" name="q4" value="14"> D) 14</label>
+            <div class="feedback" aria-live="polite"></div>
+          </fieldset>
+
+          <!-- Question 5 -->
+          <fieldset class="question" data-correct="6.5">
+            <legend>5) Ladder: 2.5 m from wall, reaches 6 m up. Length = ?</legend>
+            <label><input type="radio" name="q5" value="5.5"> A) 5.50 m</label>
+            <label><input type="radio" name="q5" value="6"> B) 6.00 m</label>
+            <label><input type="radio" name="q5" value="6.5"> C) 6.50 m</label>
+            <label><input type="radio" name="q5" value="7"> D) 7.00 m</label>
+            <div class="feedback" aria-live="polite"></div>
+          </fieldset>
+
+          <!-- Buttons -->
+          <div class="quiz-controls">
+            <button type="button" id="showScore" class="btn">Show final score</button>
+            <button type="button" id="reset" class="btn ghost">Try again</button>
+          </div>
+
+          <div id="final" class="final" aria-live="polite"></div>
+        </form>
+      </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="foot">
+      <small>Designed for learners aged 13–15 • Tap an answer to get instant feedback</small>
+    </footer>
+  </div>
+
+  <!-- Link to the JavaScript file (deferred so DOM exists) -->
+  <script src="script.js" defer></script>
+</body>
+</html>
